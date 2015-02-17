@@ -10,10 +10,21 @@ import UIKit
 
 class DetailScreen: UIViewController {
 
+    @IBOutlet weak var textfield1: UITextView!
+    @IBOutlet weak var labe1: UILabel!
+    @IBOutlet weak var image1: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        labe1.text = "Product A"
+        textfield1.text = "This is a great product"
+        let url = NSURL(string: "http://www.healthguru.sg/wp-content/uploads/2012/07/4._nestle-milo-tin-400g.jpg")
+        var imageData =  NSData(contentsOfURL: url!)
+        image1.image = UIImage(data: imageData! as NSData)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
