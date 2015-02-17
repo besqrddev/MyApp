@@ -101,7 +101,8 @@ class ListScreen: UITableViewController {
         let targetController = segue.destinationViewController as DetailScreen
          let indexPath = self.tableView.indexPathForSelectedRow() as NSIndexPath!
         let row = indexPath.row
-       targetController.objectId = objects[row]["objectId"] as String
+        let object = objects[row]
+       targetController.objectId = object["objectId"] as String
     }
  
 }
