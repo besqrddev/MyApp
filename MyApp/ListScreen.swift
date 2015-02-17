@@ -46,7 +46,7 @@ class ListScreen: UITableViewController {
         switch indexPath.row
         {
         case 0 :  cell.textLabel?.text = "Detail"; break
-        case 1 :  cell.textLabel?.text = "Detai Onel"; break
+        case 1 :  cell.textLabel?.text = "Detail One"; break
         case 2:  cell.textLabel?.text = "Detail two "; break
         default: break
         }
