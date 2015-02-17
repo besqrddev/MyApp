@@ -43,7 +43,7 @@ class ListScreen: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Detail", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        switch indexPath
+        switch indexPath.row
         {
         case 0 :  cell.textLabel?.text = "Detail"; break
         case 1 :  cell.textLabel?.text = "Detai Onel"; break
