@@ -10,6 +10,7 @@ import UIKit
 
 class DetailScreen: UIViewController {
 
+    var objectId : String!
     @IBOutlet weak var textfield1: UITextView!
     @IBOutlet weak var labe1: UILabel!
     @IBOutlet weak var image1: UIImageView!
