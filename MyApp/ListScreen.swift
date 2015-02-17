@@ -38,7 +38,7 @@ class ListScreen: UITableViewController {
         // Return the number of rows in the section.
        
         var query = PFQuery(className:"Product")
-        query.whereKey("Product", equalTo:"General")
+        query.whereKey("Category", equalTo:"General")
         
         objects = query.findObjects()
              return objects.count
