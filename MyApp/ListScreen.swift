@@ -32,24 +32,27 @@ class ListScreen: UITableViewController {
         // Return the number of sections.
         return 1
     }
-
+     var objects: [AnyObject]!
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 3
+       
+        var query = PFQuery(className:"Product")
+        query.whereKey("Product", equalTo:"General")
+        
+        objects = query.findObjects()
+             return objects.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Detail", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        switch indexPath.row
-        {
-        case 0 :  cell.textLabel?.text = "Detail"; break
-        case 1 :  cell.textLabel?.text = "Detail One"; break
-        case 2:  cell.textLabel?.text = "Detail two "; break
-        default: break
-        }
+         
+        
+        cell.textLabel?.text = objects[indexPath.row]["Name"] as String
+    
+        
         
         return cell
     }
