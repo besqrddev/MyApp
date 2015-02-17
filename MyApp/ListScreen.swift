@@ -100,8 +100,8 @@ class ListScreen: UITableViewController {
         // Pass the selected object to the new view controller.
         let targetController = segue.destinationViewController as DetailScreen
          let indexPath = self.tableView.indexPathForSelectedRow() as NSIndexPath!
-    
-       targetController.objectId = objects[indexPath.row]["objectId"] as String
+        let row = indexPath.row
+       targetController.objectId = objects[row]["objectId"] as String
     }
  
 }
