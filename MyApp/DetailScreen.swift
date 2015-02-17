@@ -20,7 +20,7 @@ class DetailScreen: UIViewController {
         // Do any additional setup after loading the view.
         
         var query = PFQuery(className:"Product")
-        query.getObjectInBackgroundWithId("sIGdRv8Up9") {
+        query.getObjectInBackgroundWithId(objectId) {
             (product: PFObject!, error: NSError!) -> Void in
             if error == nil {
                 NSLog("%@", product)
