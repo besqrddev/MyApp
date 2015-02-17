@@ -36,14 +36,21 @@ class ListScreen: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return 3
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Detail", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = "Detail"
+        switch indexPath
+        {
+        case 0 :  cell.textLabel?.text = "Detail"; break
+        case 1 :  cell.textLabel?.text = "Detai Onel"; break
+        case 2:  cell.textLabel?.text = "Detail two "; break
+        default: break
+        }
+        
         return cell
     }
 
