@@ -18,11 +18,22 @@ class DetailScreen: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        labe1.text = "Product A"
-        textfield1.text = "This is a great product"
-        let url = NSURL(string: "http://www.healthguru.sg/wp-content/uploads/2012/07/4._nestle-milo-tin-400g.jpg")
-        var imageData =  NSData(contentsOfURL: url!)
-        image1.image = UIImage(data: imageData! as NSData)
+        var query = PFQuery(className:"Product")
+        query.getObjectInBackgroundWithId("sIGdRv8Up9") {
+            (product: PFObject!, error: NSError!) -> Void in
+            if error == nil {
+                NSLog("%@", product)
+                self.labe1.text = product["Name"] as String
+                self.textfield1.text = product["Review"] as String
+                let url = NSURL(string: product["Image"] as String)
+                var imageData =  NSData(contentsOfURL: url!)
+                self.image1.image = UIImage(data: imageData! as NSData)
+                
+            } else {
+                NSLog("%@", error)
+            }
+        }
+        
         
         
     }
